@@ -1,0 +1,79 @@
+/* main.css */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+li {
+    text-align: center;
+}
+
+body {
+    background: url('../img/computerbackground.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.jumbotron-cover-image {
+    /* position: relative; */
+    background: #a40 url("../img/java3.jpg") center center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    color: rgb(230, 180, 115);
+    text-shadow: 2px 2px #101010;
+    border: 1px solid white;
+}
+
+.item {
+    padding-top: 80px!important;
+    margin-bottom: 80px!important;
+
+}
+
+.bottom-span{
+    position:absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+}
+
+.container .card {
+    padding: 8px;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+#profilecards div {
+    margin-top: 16px;
+    height: 280px;
+    padding-bottom: 8px;
+}
+
+#contact {
+    opacity: 1;
+    filter: none;
+}
+
+.side-image {
+    height: 100%;
+    width: 100%;
+}
+
+footer a{
+    color: #fff;
+    text-shadow: 2px 2px #101010;
+}
