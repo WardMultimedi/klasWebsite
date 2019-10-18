@@ -22,8 +22,8 @@
     <ul class="navbar-nav">
         <!-- Brand -->
         <li class="nav-item">
-            <a class="navbar-brand" href="#myPage">
-                <img src="img/javaicon2.png" alt="LogoJava" style="width:40px;">Home
+            <a class="nav-link " href="#myPage">
+                <img src="img/javaicon2.png" alt="LogoJava" style="width:34px;">Home
             </a>
         </li>
 
@@ -31,7 +31,7 @@
             <a class="nav-link" href="#about">Over ons</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#knowledge">De kennis</a>
+            <a class="nav-link" href="#knowledge">Kennis</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#profiles">Wie zijn we</a>
@@ -39,9 +39,7 @@
         <li class="nav-item">
             <a class="nav-link" href="#contact">Contacteer ons</a>
         </li>
-
     </ul>
-
 </nav>
 
 <!-- Header in containers -->
@@ -56,14 +54,14 @@
         <div class="card border-0 shadow my-5">
             <div class="row">
                 <div class="col-sm-8">
-                    <h2>Over ons</h2><br>
+                    <h1>Over ons</h1><br>
                     <p>Wij zijn een groep van 10 beginnende Java developers. Wij volgen de cursus Java Enterprise
                         ontwikkelaar
                         op
                         de VDAB van Heverlee.
                         Deze groep bestaat uit zeer gemotiveerde developers die willen groeien tot nieuwe hoogtes in de
                         sector.<br><br>
-                        Wij nodigen u graag uit op onze Job-dag op 4 december!
+                        Wij nodigen u graag uit op onze <a href="#contact">Job-dag</a> op 4 december!
                     </p>
                     <br>
                 </div>
@@ -79,7 +77,7 @@
         <div class="card border-0 shadow my-5">
             <div class="row">
                 <div class="col-sm-8">
-                    <h2>Kennis</h2>
+                    <h1>Kennis</h1>
                     <p>
                         <strong>Java technologieën:</strong> JSE 1.11 - Servlets 3.0 - JSP 2.3 - EL 2.1 - Custom Tags -
                         JSTL - EJB
@@ -105,11 +103,12 @@
 
             <%
                 for (Leerling l : (List<Leerling>) request.getAttribute("leerlingen")) {
+                    boolean preNotated = false;
             %>
             <div class="col-lg-4 col-md-6">
-                <div class="card card-body" >
+                <div class="card card-body">
                     <div class="media-body">
-                        <img src="img/<%=l.getImage()%>" alt="Tom Derekx" class="mr-3 mt-3 rounded-circle"
+                        <img src="img/avatars/<%=l.getImage()%>" alt="<%=l.getVoornaam() + " " + l.getAchternaam()%>" class="mr-3 mt-3 rounded-circle"
                              style="width:80px;float: left;">
                         <h4><%=l.getVoornaam() + " " + l.getAchternaam()%>
                         </h4>
@@ -118,14 +117,27 @@
                         </p>
                         <div class="text-center">
                             <span class="bottom-span">
-                                <% if(l.getEmail() !=null){%>
-                                <strong>email: </strong><a href="mailto:<%=l.getEmail()%>"><%=l.getEmail()%></a><br/>
-                                <%}%>
+                                <%-- Homepage --%>
                                 <% if (l.getHomepage() != null) { %>
-                                <a href="<%=l.getHomepage()%>">homepage</a><br>
+                                <a href="<%=l.getHomepage()%>">Homepage</a>
+                                <% preNotated = true;
+                                } %>
+                                <%-- LinkedIn --%>
+                                 <% if (l.getLinkedIn() != null) {
+                                     if (preNotated) {
+                                 %>
+                                <br>
                                 <% }
-                                    if (l.getLinkedIn() != null) { %>
-                                <a href="<%=l.getLinkedIn()%>">linkedin</a>
+                                    preNotated = true; %>
+                                <a href="<%=l.getLinkedIn()%>">LinkedIn</a>
+                                <% } %>
+                                <%-- Email --%>
+                                 <% if (l.getEmail() != null) {
+                                     if (preNotated) {
+                                 %>
+                                <br>
+                                <% } %>
+                                <strong>email: </strong><a href="mailto:<%=l.getEmail()%>"><%=l.getEmail()%></a>
                                 <% } %>
                             </span>
                         </div>
