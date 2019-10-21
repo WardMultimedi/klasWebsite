@@ -14,7 +14,12 @@ public final class DriverManagerWrapper {
             }catch (ClassNotFoundException cnfe){
                 System.out.println("Could not find mariadb Driver");
             }
-            con = DriverManager.getConnection(DB.url, DB.login, DB.pwd);
+            try {
+                con = DriverManager.getConnection(DB.url, DB.login, DB.pwd);
+            }
+            catch (SQLException se){
+                System.out.println("Could not connect to DB: " + se.getMessage());
+            }
         }
         return con;
     }
