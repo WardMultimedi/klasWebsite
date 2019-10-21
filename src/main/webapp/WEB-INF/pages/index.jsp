@@ -85,8 +85,8 @@
                         Spring 4.0 - JDBC - JPA 2.1 - JUnit - JAXB .
                         <br/><strong>Webtechnologieën:</strong> HTML - XHTML - CSS - JavaScript - Ajax - JSON -
                         Bootstrap
-                        <br/><strong>Platformen:</strong>Windows 10 - Linux - Macintosh
-                        <br/><strong>Ontwikkeltools:</strong>IntelliJ - Git - Maven
+                        <br/><strong>Platformen:</strong> Windows 10 - Linux - Macintosh
+                        <br/><strong>Ontwikkeltools:</strong> IntelliJ - Git - Maven
                     </p>
                 </div>
                 <div class="col-sm-4">
