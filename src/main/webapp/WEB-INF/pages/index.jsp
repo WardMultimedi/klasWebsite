@@ -46,7 +46,7 @@
 <div class="container">
     <div class="jumbotron jumbotron-cover-image">
         <h2>New <b>Java</b> developers!</h2>
-        <p>Extractig Java code from regular Java coffee beans.</p>
+        <p>Extracting Java code from regular Java coffee beans.</p>
     </div>
 
     <!-- About Us -->
